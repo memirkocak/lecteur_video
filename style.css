@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+button {
+  background:none;
+  color:white;
+  border: none;
+}
+
+input {
+  width: 600px;
+}
+
+.sectionbtn{
+  background-color: blueviolet;
+  padding: 13.5px;
+}
