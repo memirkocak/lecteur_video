@@ -1,20 +1,35 @@
 import './style.css'
 
 let video = document.querySelector('#video')
-let btnplay = document.querySelector('#play')
-let reset = document.querySelector('#reset')
-let back = document.querySelector('#back')
-let skip = document.querySelector('#skip')
+let btnreset = document.querySelector('#reset')
+let btnback = document.querySelector('#back')
+let btnskip = document.querySelector('#skip')
 let slidebar = document.querySelector('#slide')
+let play = document.querySelector("#play")
 
-function videoplay(){
-    video.play()
-}
+video.addEventListener('click',()=>{
+    if(video.paused){
+        video.play();
+        play.hidden = true
+    }
+    else{
+        video.pause();
+        play.hidden = false
+    }
+})
 
-function reset(){
-    slidebar.value = 0
-}
+btnreset.addEventListener('click',()=>{
+    video.currentTime = 0
+})
 
-btnplay.addEventListener('click',videoplay)
+btnback.addEventListener('click',()=>{
+    video.currentTime -= 5
+})
 
-reset.addEventListener('click',reset)
+btnskip.addEventListener('click',()=>{
+    video.currentTime += 5
+})
+
+video.addEventListener('timeupdate', ()=>{
+    console.log(Math.ceil(video.currentTime));
+})

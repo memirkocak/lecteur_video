@@ -7,13 +7,15 @@
     <title>lecteur video</title>
   </head>
   <body>
-    <video id="video" width="790.16">
-      <source src="video/flower.webm" type="video/webm" />
-      <button id="play">Play</button>
-    </video>
+    <div class="player">
+      <img width="100" src="https://cdn-icons-png.flaticon.com/512/0/375.png" alt="play" id="play">
+      <video id="video" width="790.16">
+        <source src="http://learn.shayhowe.com/assets/misc/courses/html-css/adding-media/earth.ogv" type="video/webm" />
+      </video>
+    </div>
     <section class="sectionbtn">
-      <button id="back">BACK</button>
-      <button id="skip">SKIP</button>
+      <button id="back">BACK <span>5S</span></button>
+      <button id="skip">SKIP <span>5S</span></button>
       <button id="reset">RESET</button>
       <progress id="slide" max="100" value="25">
     </section>
