@@ -4,10 +4,11 @@ let video = document.querySelector('#video')
 let btnreset = document.querySelector('#reset')
 let btnback = document.querySelector('#back')
 let btnskip = document.querySelector('#skip')
-let slidebar = document.querySelector('#slide')
+let slidebar = document.querySelector('input')
 let play = document.querySelector("#play")
 
 video.addEventListener('click',()=>{
+    slidebar.setAttribute('max', video.duration)
     if(video.paused){
         video.play();
         play.hidden = true
@@ -31,5 +32,10 @@ btnskip.addEventListener('click',()=>{
 })
 
 video.addEventListener('timeupdate', ()=>{
-    console.log(Math.ceil(video.currentTime));
+    slidebar.value = video.currentTime;
 })
+
+slidebar.addEventListener('input', ()=>{
+    video.currentTime = slidebar.value;
+})
+
